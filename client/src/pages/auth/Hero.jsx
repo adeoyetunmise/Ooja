@@ -12,26 +12,25 @@ const Hero = () => {
                 <nav>
                     <ul className="flex justify-center items-center space-x-2">
                         <li>
-                            <Link to="/login" className="bg-primary text-secondary py-2 px-4 rounded-md font-bold">Log In</Link>
+                            <Link to="/login" className="bg-indigo-600 text-white   py-2 px-4 rounded-md font-bold">Log In</Link>
                         </li>
                         <li>
-                            <Link to="/register" className="bg-tertiary text-secondary py-2 px-4 rounded-md font-bold">Register</Link>
+                            <Link to="/signup" className="bg-rose-500 text-white py-2 px-4 rounded-md font-bold">Sign Up</Link>
                         </li>
                     </ul>
                 </nav>
             </header>
             <div className="flex flex-col items-center justify-center min-h-[500px] relative"> 
-                <img src="/svgs/targeting.svg" alt="Ooja" width={75} className="absolute bottom-[500px] bo right-[1100px] rorate-12 -z-10" />
                    <h1 className="font-extrabold text-center font-iceberg text-7xl">
                      Welcome to the best place to buy and sell your favourite items.<span className="oj">Ooja</span> is your one stop<span className="oj"> market place</span>
 
                 </h1>
                 <p className="text-center text-slate-800 text-lg my-10">
-                    We also offer delivery services, so you can get your items as soon as posssible. Ooja serves everyone around the country. We sell varieties of everything from house hold items to food and groceries and every other needs...
+                We offer fast, reliable delivery services to bring your items right to your doorstep. At Ooja, we serve customers nationwide, providing a wide variety of products, from household essentials to food, groceries, and much more to meet all your needs.
                     </p> 
-                    <Link to="/register" className=" bg-primary text-tertiary py-2 px-4 rounded-md font-bold">Get Started</Link>
+                    <Link to="/signup" className=" bg-rose-500 text-white py-2 px-4 rounded-md font-bold">Get Started</Link>
 
-                    <img src="/svgs/usb.svg" alt="Ooja" width={100} className="absolute bottom-0 right-0 rotate-6" />
+                    
             </div>
         </div>
   )

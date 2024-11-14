@@ -13,8 +13,31 @@ export const signup = async (req, res) => {
 
     try {
         const user = await User.signup(firstName, lastName,userName, email, age, password);
-        res.status(200).json({ user,token: await getToken(user) });
+        res.status(201).json({ user,token: await getToken(user) });
     } catch (error) {
         res.status(400).json({error: error.message});
     }
 };
+
+export const login = async(req, res) => {
+    const {email, password} = req.body;
+
+    try {
+        const user = await User.login(email, password);
+        res.status(200).json({user, token: await getToken(user)});
+    } catch (error) {
+        res.status(400).json({error: error.message})
+    }
+}
+
+
+// to be deleted on production
+
+export const getUsers = async(req, res) => {
+    try {
+        const users = await User.find();
+        res.status(200).json({ users })
+    } catch (error) {
+        res.status(400).json({ error: error.message})
+    }
+}

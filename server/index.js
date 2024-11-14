@@ -20,7 +20,7 @@ app.use('/api/v1/auth', userRouter)
 
 const PORT = process.env.PORT
 app.listen(PORT, (err) =>{
-    console.log('listening at' + PORT);
+    console.log('listening at ' + PORT);
     
 })
 

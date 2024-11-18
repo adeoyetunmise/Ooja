@@ -9,6 +9,8 @@ import 'react-toastify/dist/ReactToastify.css';
 import { useContext } from 'react'
 import { AppContext } from './contexts/AppContext'
 import Dashboard from './pages/main/Dashboard'
+import UploadProduct from './components/UploadProduct'
+import EditProduct from './components/EditProduct'
 
 
 
@@ -36,6 +38,8 @@ function App() {
     <Routes>
       <Route path='/' element={<RootLayout/>}>
         <Route index element={<Dashboard/>}></Route>
+        <Route path='uploadproduct' element={<UploadProduct/>}></Route>
+        <Route path='editproduct' element={<EditProduct/>}></Route>
       </Route>
     </Routes>
     </>

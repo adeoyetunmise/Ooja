@@ -1,14 +1,27 @@
 import {Router} from "express"
+import authenticate from "../middleware/authenticate.js"
+import { getMyProducts, getProduct, getProducts, createProduct } from "../controllers/productController.js"
+import upload from '../middleware/multer.js'
 
 
+const productRoute = Router()
 
+productRoute.get("/", authenticate, getProducts )
 
-const productRouter = Router()
+productRoute.get("/:id",authenticate, getProduct)
 
-productRouter.post("/addProduct", addProduct)
-productRouter.get("/getAllProduct", allProduct)
-productRouter.get("/getSingleProduct", singleProduct)
-productRouter.patch("/updateProduct", updateProduct)
-productRouter.delete("/deleteProduct", deleteProduct)
+productRoute.get("/myproducts", authenticate, getMyProducts)
+
+productRoute.post("/" , authenticate, upload.single('image'), createProduct)
+
+productRoute.patch("/:id",  (req, res) => {
+    res.send('update a product')
+} )
+
+productRoute.delete("/:id",  (req, res) => {
+    res.send('delete a product')
+})
+
+export default productRoute
 
 

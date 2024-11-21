@@ -4,6 +4,7 @@ import mongoose from 'mongoose'
 import cors from 'cors'
 import bodyParser from 'body-parser'
 import userRouter from './routes/userRoute.js'
+import productRoute from './routes/productroute.js'
 
 dotenv.config()
 const app = express()
@@ -11,11 +12,14 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))
 app.use(bodyParser.json())
+app.use(express.static('public'))
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(cors())
 
 
 app.use('/api/v1/auth', userRouter)
+app.use('/api/v1/products', productRoute)
+
 
 
 const PORT = process.env.PORT
@@ -30,5 +34,6 @@ mongoose.connect(process.env.MONGO_URI)
     
 })
 .catch((err) =>{
-    log(err)
+    console.log();
+    (err)
 })

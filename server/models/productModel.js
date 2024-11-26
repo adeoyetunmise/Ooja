@@ -23,6 +23,11 @@ const productSchema = new Schema({
         required: true
     },
 
+    imageID: {
+        type: String,
+        required: true
+    },
+
     category: {
         type: String,
         required: true

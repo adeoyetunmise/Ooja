@@ -5,7 +5,7 @@ dotenv.config()
 
 const getToken = ({id}) => {
     return jwt.sign({id}, process.env.JWT_SECRET, {
-        expiresIn: '3d'
+        expiresIn: '10d'
     })
 }
 export const signup = async (req, res) => {

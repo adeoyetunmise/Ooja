@@ -8,15 +8,15 @@ const productRoute = Router()
 
 productRoute.get("/", authenticate, getProducts)
 
-productRoute.get("/:id",authenticate, getProduct)
+productRoute.get("/:_id",authenticate, getProduct)
 
 productRoute.get("/myproducts", authenticate, getMyProducts)
 
 productRoute.post("/" , authenticate, upload.single('image'), createProduct)
 
-productRoute.patch("/:id", authenticate, upload.single('image'), updateProduct)
+productRoute.patch("/:_id", authenticate, upload.single('image'), updateProduct)
 
-productRoute.delete("/:id", authenticate, upload.single('image'), deleteProduct)
+productRoute.delete("/:_id", authenticate, deleteProduct)
 
 export default productRoute
 
